@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  rust_cont:
+    build:
+      context: ../
+      dockerfile: docker/df_rust_alpine/Dockerfile
+    image: yubin0611/rust_alpine:v1.44
+    container_name: rust_container
+    volumes:
+      - /tmp:/tmp
+      - /mnt:/mnt
+      - /home/yubin/builds:/builds
+      - /home/yubin/Dropbox/document/code:/code
+    networks:
+      - myapps
+    command: tail -F anything
+
+networks:
+  myapps:
+    external: true

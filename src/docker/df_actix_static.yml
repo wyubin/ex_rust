@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  actix_static:
+    build:
+      context: ../
+      dockerfile: docker/df_actix_static/Dockerfile
+    image: yubin0611/actix_static:v2.0.0
+    container_name: actix_static
+    volumes:
+      - /tmp:/tmp
+      - /mnt:/mnt
+      - /home/yubin/builds:/builds
+      - /home/yubin/builds/rust/actix_static/static:/tools/static
+    ports:
+      - "80:8088"
+    networks:
+      - myapps
+    command: /tools/actix_static
+
+networks:
+  myapps:
+    external: true
