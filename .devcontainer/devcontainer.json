@@ -13,6 +13,8 @@
 		"terminal.integrated.env.linux":{}
 	},
 	"remoteUser": "wyubin",
-	"extensions": [],
+	"extensions": [
+		"rust-lang.rust-analyzer"
+	],
 	"forwardPorts": []
 }
